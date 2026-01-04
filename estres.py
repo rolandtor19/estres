@@ -58,7 +58,7 @@ st.markdown("Verificando integridad de datos y relleno de huecos.")
 
 # Selector de Tortura
 activo_test = st.selectbox("Elegir Víctima:", ["SHIB-USD", "NG=F", "GME", "EURUSD=X", "BTC-USD"])
-tf_test = st.selectbox("Timeframe:", ["1h", "4h", "1d"], index=1)
+tf_test = st.selectbox("Timeframe:", ["1m", "2m", "5m", "15m", "30m", "1h", "4h", "1d"], index=1)
 
 if st.button("💣 EJECUTAR TEST"):
     with st.spinner("Torturando datos..."):
