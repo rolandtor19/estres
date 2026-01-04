@@ -7,7 +7,7 @@ import numpy as np
 # --- TU FUNCIÓN EXACTA (Copiada para testear) ---
 def rellenar_huecos_intradia(df, tf, ticker_name=""):
     if df.empty: return df, 0, 0.0
-    freq_map = {'1m': '1min', '2m': '2min', '5m': '5min', '15m': '15min', '30m': '30min', '60m': '60min', '90m': '90min', '1h': '1h', '4h': '4h'}
+    freq_map = {'1m': '1min', '2m': '2min', '5m': '5min', '15m': '15min', '30m': '30min', '60m': '60min', '90m': '90min', '1h': '1h', '4h': '4h', '1d': '1d'}
     frecuencia = freq_map.get(tf, '1h')
     es_crypto_247 = ticker_name.endswith("-USD")
     len_original = len(df)
@@ -58,7 +58,7 @@ st.markdown("Verificando integridad de datos y relleno de huecos.")
 
 # Selector de Tortura
 activo_test = st.selectbox("Elegir Víctima:", ["SHIB-USD", "NG=F", "GME", "EURUSD=X", "BTC-USD"])
-tf_test = st.selectbox("Timeframe:", ["1h", "4h"], index=1)
+tf_test = st.selectbox("Timeframe:", ["1h", "4h", "1d"], index=1)
 
 if st.button("💣 EJECUTAR TEST"):
     with st.spinner("Torturando datos..."):
